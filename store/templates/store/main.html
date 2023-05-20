@@ -75,8 +75,17 @@
 	                <a class="nav-link" href="{% url 'store' %}">Store<span class="sr-only">(current)</span></a>
 	            </li>
 	        </ul>
+			<form class="d-flex" role="search">
+				<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-success" type="submit">Search</button>
+			</form>
             <div class="form-inline my-2 my-lg-0">
-                <a href="#"class="btn btn-warning">Login</a>
+				{% if user.is_authenticated %}
+					<a href="{% url 'main:logout' %}" class="btn btn-dark">Logout</a>
+				{% else %}
+					<a href="{% url 'main:login' %}" class="btn btn-dark">Login</a>
+					<a href="{% url 'main:register' %}" class="btn btn-dark">Sign-up</a>
+				{% endif %}
                 <a href="{% url 'cart' %}">
                     <img  id="cart-icon" src="{% static 'images/cart.png' %}">
                 </a>

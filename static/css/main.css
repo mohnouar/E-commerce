@@ -51,7 +51,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .btn{
-	border-radius: 0;
+	border-radius: 5px;
+	margin: 0px 5px;
 }
 
 .row-image{
@@ -97,3 +98,8 @@ h1,h2,h3,h4,h5,h6{
 .hidden{
 	display: none!important;
 }
+
+.d-flex{
+	margin: 0px 50px;
+}
+
